@@ -1,10 +1,10 @@
 { "name": "webinos-api-sensors"
 , "publishConfig": { "tag": "alpha" }
 , "description": "Sensors API"
-, "keywords": [ "webinos", "sensors", "API"]
+, "keywords": [ "webinos", "sensors", "vehicle", "API", "obd"]
 , "version": "0.0.1"
 , "homepage": "http://webinos.org/"
-, "author": "Giuseppe La Torre <giuseppe.latorre@dieei.unict.it>"
+, "author": "Giuseppe La Torre <giuseppe.latorre@dieei.unict.it>, Krishna Bangalore <krishna.bangalore@in.tum.de>"
 , "repository":
   { "type": "git"
   , "url": "https://github.com/webinos/webinos-api-sensors.git"
@@ -13,17 +13,31 @@
   { "email": "webinos-wp4-ml@fokus.fraunhofer.de"
   , "url": ""
   }
-, "directories": { "lib": "./lib"
+, "directories": { "contrib": "./contrib"
+                 , "lib": "./lib"
+                 , "test": "./test"
                  }
 , "main": "./lib/rpc_sensors.js"
 , "dependencies":
   {
+   "now": "0.8.1"
+  ,"bluetooth-obd": ">=0.1.x"
+  ,"serial-obd": ">=0.1.x"
   }
 , "devDependencies":
   {
-    "webinos-jsonrpc2" : "*"
+    "webinos-jsonrpc2": "*",
+    "zombie": "~2.0.0-alpha15",
+    "jasmine-node": "x.x.x"
   }
 , "bundleDependencies":
-  [
-  ]
+  [ "events"
+  , "fs"
+  , "https"
+  , "path"
+  , "url"
+  ],
+ "scripts":{
+  "travis-api-test": "./test/tools/travis-test.sh"
+}
 }

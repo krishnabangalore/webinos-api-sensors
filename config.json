@@ -1,6 +1,17 @@
 {
+  "name": "vehicle",
   "params": 
     {
-        "drivers" : [ "webinos-driver-arduino" ]
+     "drivers" : [ "webinos-driver-arduino" ],
+     "connector": "obd",
+     "obdParams": {
+        "type": "serial",
+        "btAddress": "D8:0D:E3:80:19:B4",
+        "btChannel": 14,
+        "serialPort": "/dev/pts/4",
+        "serialOptions": {
+            "baudrate": 115200
+                         } 
+                  }
     }
 }

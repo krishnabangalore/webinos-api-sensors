@@ -25,6 +25,7 @@
         $('<option value=\'light\'>light</option>').appendTo('#sensorTypeList');
         $('<option value=\'proximity\'>proximity</option>').appendTo('#sensorTypeList');
         $('<option value=\'heartratemonitor\'>heartratemonitor</option>').appendTo('#sensorTypeList');
+      //  $('<option value=\'vss\'>vss</option>').appendTo('#sensorTypeList');
 
         $('#findService').bind('click', function() {
 
@@ -51,12 +52,13 @@
             sensorToUse.bind({onBind:function(){
                 logObj(sensors,'sensors');
                 $('#messages').append('<li> Sensor ' + sensorToUse.api + ' bound.</li>');
-               <!-- $('#messages').append('<li> Max Range: ' + sensorToUse.maximumRange + '</li>'); -->
+            //   <!-- $('#messages').append('<li> Max Range: ' + sensorToUse.maximumRange + '</li>'); -->
                 $('#messages').append('<li> Min Delay: ' + sensorToUse.minDelay + '</li>');
                 $('#messages').append('<li> Power: ' + sensorToUse.power + '</li>');
                 $('#messages').append('<li> Resolution: ' + sensorToUse.resolution + '</li>');
                 $('#messages').append('<li> Vendor: ' + sensorToUse.vendor + '</li>');  
                 $('#messages').append('<li> Version: ' + sensorToUse.version + '</li>'); 
+        //        $('#messages').append('<li> vss: ' + sensorToUse.vss + '</li>'); 
             }});
         }); 
                     
@@ -81,9 +83,11 @@
                     $('#sensorResult').append('<li> Interrupt: ' + event.interrupt + '</li>');
                     $('#sensorResult').append('<li> Absolute Temp: ' + event.sensorValues[0] + '</li>');
                     $('#sensorResult').append('<li> Normalized Temp: ' + event.sensorValues[1] + '</li>');
+        //            $('#sensorResult').append('<li> Speed: ' + event.vss + '</li>');
                 }else{
                 } 
-        }   
+        }       
+
 
         $('#register').bind('click', function() {
             sensorToUse.addEventListener('sensor', onSensorEvent , false);

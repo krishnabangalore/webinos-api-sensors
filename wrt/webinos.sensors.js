@@ -49,6 +49,7 @@
                 self.resolution = result.resolution;
                 self.vendor = result.vendor;  
                 self.version = result.version; 
+                self.vss = result.vss;
             
                 if (typeof bindCB.onBind === 'function') {
                     bindCB.onBind(this);
